@@ -4,10 +4,18 @@
 ## Terraform configuration
 
 terraform {
+    cloud {
+    organization = "lb-terraform-prd"
+    workspaces {
+      name = "learn-terraform-migrate"
+      project = "learn-terraform-prj"
+    }
+  }
+
   required_providers {
     random = {
       source  = "hashicorp/random"
-      version = "3.3.2"
+      version = ">= 3.3.2"
     }
   }
   required_version = ">= 1.1.0"
